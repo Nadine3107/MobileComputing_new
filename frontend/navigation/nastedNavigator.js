@@ -18,6 +18,9 @@ import CameraScreen from "../Screens/Camera/Camera";
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
+//Navigation am unteren Bildschirmrand
+//verschachtelte Navigation
+//Wenn der user eingeloggt ist, sieht er diese Navigation (wenn er nicht eingeloggt ist, den Anmeldeprozess)
 const NastedNavigator = ({ loginState, userData }) => {
   return (
     <NavigationContainer>
@@ -84,6 +87,7 @@ const NastedNavigator = ({ loginState, userData }) => {
   );
 };
 
+//redux
 const mapStateToProps = (state) => {
   return {
     loginState: state.loginState,
@@ -91,4 +95,5 @@ const mapStateToProps = (state) => {
   };
 };
 
+//redux
 export default connect(mapStateToProps, null)(NastedNavigator);

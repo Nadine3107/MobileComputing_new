@@ -5,6 +5,7 @@ const initState = {
   loginState: false,
 };
 
+//Übermittlung Loginstatus und Userdaten
 const rootReducer = (state = initState, action) => {
   switch (action.type) {
     case "SET_LOGIN":

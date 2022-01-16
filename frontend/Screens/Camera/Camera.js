@@ -1,7 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Text, TextInput, View, Button, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import React, { useEffect, useRef, useState } from "react";
+import {
+  Text,
+  TextInput,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 
-import { Camera } from 'expo-camera';
+import { Camera } from "expo-camera";
+//Funktionalität, dass Kamera geöffnet wird
 
 const CameraScreen = () => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -11,7 +20,7 @@ const CameraScreen = () => {
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
-      setHasPermission(status === 'granted');
+      setHasPermission(status === "granted");
     })();
   }, []);
 
@@ -28,7 +37,7 @@ const CameraScreen = () => {
         let photo = await cameraRef.current.takePictureAsync({
           allowsEditing: true,
           aspect: [4, 3],
-          quality: 1
+          quality: 1,
         });
 
         return photo;
@@ -36,7 +45,7 @@ const CameraScreen = () => {
         console.log(error);
       }
     }
-  }
+  };
 
   return (
     <>
@@ -51,16 +60,17 @@ const CameraScreen = () => {
                     ? Camera.Constants.Type.front
                     : Camera.Constants.Type.back
                 );
-              }}>
+              }}
+            >
               <Text style={styles.text}> Flip </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               onPress={async () => {
-                const r = await takePhoto()
-                // return image object to store in the database 
-                Alert.alert("DEBUG", JSON.stringify(r))
-                console.log(r)
+                const r = await takePhoto();
+                // return image object to store in the database
+                Alert.alert("DEBUG", JSON.stringify(r));
+                console.log(r);
               }}
             >
               <Text style={styles.text}> Photo </Text>
@@ -69,8 +79,8 @@ const CameraScreen = () => {
         </Camera>
       </View>
     </>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -81,19 +91,19 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'transparent',
-    flexDirection: 'row',
+    flexDirection: "row",
+    backgroundColor: "transparent",
+    flexDirection: "row",
     margin: 20,
   },
   button: {
     flex: 1,
-    alignSelf: 'flex-end',
-    alignItems: 'center',
+    alignSelf: "flex-end",
+    alignItems: "center",
   },
   text: {
     fontSize: 18,
-    color: 'white',
+    color: "white",
   },
 });
 

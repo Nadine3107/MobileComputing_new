@@ -20,10 +20,12 @@ const Profile = ({ userData }) => {
   );
 };
 
+//redux
 const mapStateToProps = (state) => {
   return {
     userData: state.userData,
   };
 };
 
+//redux
 export default connect(mapStateToProps, null)(Profile);

@@ -61,7 +61,6 @@ const BeitragErstellen = () => {
     <>
       <ScrollView style={globalStyle.container}>
         <View>
-          {/* TODO: CardType --> dropdown */}
           <Picker
             selectedValue={selectCardType}
             onValueChange={(itemValue, itemIndex) =>
@@ -72,7 +71,7 @@ const BeitragErstellen = () => {
             <Picker.Item label="Hilfe suchen" value="Hilfsgesuche" />
             <Picker.Item label="Hilfe anbieten" value="Hilfsangebot" />
           </Picker>
-          {/* TODO: categorien --> dropdown */}
+
           <Picker
             selectedValue={selectCategory}
             onValueChange={(itemValue, itemIndex) =>
@@ -84,7 +83,7 @@ const BeitragErstellen = () => {
               <Picker.Item key={data._id} label={data.name} value={data.name} />
             ))}
           </Picker>
-          {/* TODO: description --> textfield */}
+
           <TextInput
             multiline={true}
             numberOfLines={10}

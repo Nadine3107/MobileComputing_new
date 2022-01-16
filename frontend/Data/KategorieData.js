@@ -1,23 +1,23 @@
-// Kategorien für Pinnwandeinträge
+// vorgefertigte Kategorien für Pinnwandeinträge zu Testzwecken
 const KategorieData = {
   data: [
     {
       id: 1,
-      name: 'Gesellschaft'
+      name: "Gesellschaft",
     },
     {
       id: 2,
-      name: 'Teilen'
+      name: "Teilen",
     },
     {
       id: 3,
-      name: 'Einkaufen'
-    }, 
+      name: "Einkaufen",
+    },
     {
       id: 4,
-      name: 'Bürokratisches'
-    }
-  ]
-}
+      name: "Bürokratisches",
+    },
+  ],
+};
 
 export default KategorieData;
